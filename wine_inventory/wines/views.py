@@ -27,13 +27,13 @@ def wine_create(request):
         if form.is_valid():
             form.save()
             return redirect('wine_list')
-        else:
-            form = WineForm()
-        return render(
-            request,
-            'wines/wine_form.html',
-            {'form': form}
-        )
+    else:
+        form = WineForm()
+    return render(
+        request,
+        'wines/wine_form.html',
+        {'form': form}
+    )
     
 
 def wine_update(request, pk):

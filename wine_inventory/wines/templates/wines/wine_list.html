@@ -12,9 +12,9 @@
     <ul>
         {% for wine in wines %}
             <li>
-                <a href="{% url 'wine_detail' wne.pk %}">{{ wine.name }}</a> - {{ wine_category }} - {{ wine.quantity }}
+                <a href="{% url 'wine_detail' wine.pk %}">{{ wine.name }}</a> - {{ wine_category }} - {{ wine.quantity }}
                 <a href="{% url 'wine_update' wine.pk %}">Edit</a>
-                <a href="{%% url 'wine_delete' wine.pk }">Delete</a>
+                <a href="{% url 'wine_delete' wine.pk %}">Delete</a>
             </li>
         {% endfor %}
     </ul>

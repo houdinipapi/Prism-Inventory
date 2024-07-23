@@ -11,8 +11,9 @@
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Save</button>
-        <a href="{% url 'wine_list' %}">Back to list</a>
+        
     </form>
+    <a href="{% url 'wine_list' %}">Back to list</a>
     
 </body>
 </html>
