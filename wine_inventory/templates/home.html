@@ -1,0 +1,14 @@
+<!-- wine_inventory/templates/home.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wine Inventory Homepage</title>
+</head>
+<body>
+    <h1>Welcome to the Wine Inventory System</h1>
+    <ul>
+        <li><a href="{% url 'wine_list' %}">Wines</a></li>
+        <li><a href="{% url 'outlet_list' %}">Outlets</a></li>
+    </ul>
+</body>
+</html>
