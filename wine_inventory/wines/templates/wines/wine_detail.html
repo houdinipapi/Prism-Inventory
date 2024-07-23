@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ wine.name }}</title>
+</head>
+<body>
+    <h1>{{ wine.name }}</h1>
+    <p>Category: {{ wine.category }}</p>
+    <p>Quantity: {{ wine.quantity }}</p>
+    <a href="{% url 'wine_update' wine.pk %}">Edit</a>
+    <a href="{% url 'wine_delete' wine.pk %}">Delete</a>
+    <a href="{% url 'wine_list' %}">Back to list</a>
+    
+</body>
+</html>
