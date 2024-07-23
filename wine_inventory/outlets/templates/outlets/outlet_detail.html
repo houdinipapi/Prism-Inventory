@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ outlet.name }}</title>
+</head>
+<body>
+    <h1>{{ outlet.name }}</h1>
+    <p>Location: {{ outlet.location }}</p>
+    <h2>Wines</h2>
+    <a href="{% url 'outlet_wine_create' outlet.pk %}">Add new wine</a>
+    <ul>
+        {% for outlet_wine in outlet_wines %}
+            <li>
+                {{ outlet_wine.wine.name }} - {{ outlet_wine.quantity }}
+                <a href="{% url 'outlet_wine_update' outlet.pk outlet_wine.pk %}">Edit</a>
+                <a href="{% url 'outlet_wine_delete' outlet.pk outlet_wine.pk %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'outlet_list' %}">Back to list</a>
+</body>
+</html>

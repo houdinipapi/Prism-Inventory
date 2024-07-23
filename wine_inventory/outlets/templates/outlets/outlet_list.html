@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Outlet List</title>
+</head>
+<body>
+    <h1>Outlet List</h1>
+    <a href="{% url 'outlet_create' %}">Add new outlet</a>
+    <ul>
+        {% for outlet in outlets %}
+            <li>
+                <a href="{% url 'outlet_detail' outlet.pk %}">{{ outlet.name }}</a> - {{ outlet.location }}
+                <a href="{% url 'outlet_update' outlet.pk %}">Edit</a>
+                <a href="{% url 'outlet_delete' outlet.pk %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

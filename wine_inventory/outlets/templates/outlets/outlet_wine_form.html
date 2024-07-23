@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Wine in {{ outlet.name }}</title>
+</head>
+<body>
+    <h1>New Wine in {{ outlet.name }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'outlet_detail' outlet.pk %}">Back to outlet</a>
+</body>
+</html>

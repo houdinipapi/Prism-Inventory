@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Outlet</title>
+</head>
+<body>
+    <h1>Delete Outlet</h1>
+    <p>Are you sure you want to delete "{{ outlet.name }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirm</button>
+    </form>
+    <a href="{% url 'outlet_list' %}">Back to list</a>
+</body>
+</html>
