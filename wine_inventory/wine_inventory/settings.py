@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 
     # Custom Apps
     "wines",
+    "outlets",
 ]
 
 MIDDLEWARE = [
