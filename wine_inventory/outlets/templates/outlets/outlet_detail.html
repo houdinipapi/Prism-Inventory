@@ -20,3 +20,33 @@
     <a href="{% url 'outlet_list' %}">Back to list</a>
 </body>
 </html>
+
+
+{% comment %} <!-- outlets/templates/outlets/outlet_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ outlet.name }}</title>
+</head>
+<body>
+
+    <h1>{{ outlet.name }}</h1>
+    <p>Location: {{ outlet.location }}</p>
+
+    <h2>Wines in this Outlet</h2>
+    <a href="{% url 'outlet_wine_create' outlet.pk %}">Add new wine</a>
+    <ul>
+        {% for outlet_wine in outlet_wines %}
+            <li>
+                {{ outlet_wine.wine.name }} - {{ outlet_wine.quantity }}
+                {% comment %} <a href="{% url 'outlet_wine_update' outlet_wine.pk %}">Edit</a> {% endcomment %}
+                {% comment %} <a href="{% url 'outlet_wine_update' outlet_pk=outlet.pk pk=wine.pk %}">Edit</a>
+                <a href="{% url 'outlet_wine_delete' outlet_wine.pk %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'outlet_list' %}">Back to Outlets</a>
+</body>
+</html> {% endcomment %}
