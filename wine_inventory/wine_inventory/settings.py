@@ -15,6 +15,7 @@ import environ
 import os
 
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -32,7 +33,7 @@ SECRET_KEY = "django-insecure-si%+cx25%^$pbdg@2mb%k987w2!#zp)sxk_axlob72su0w@axz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [".vercel.app", "127.0.0.1"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
