@@ -1,14 +1,28 @@
+
 {
-    "builds": [{
-        "src": "wine_inventory/wsgi.py",
-        "use": "@vercel/python",
-        "config": {
-            "maxLambdaSize": "15mb",
-            "runtime": "python3.12"
+    "version": 2,
+    "builds": [
+        {
+            "src": "wine_inventory/wsgi.py",
+            "use": "@vercel/python",
+            "config": {
+                "runtime": "python3.8",
+                "maxLambdaSize": "15mb"
+            }
+        },
+        {
+            "src": "wine_inventory/staticfiles/**",
+            "use": "@vercel/static"
         }
-    }],
-    "routes": [{
-        "src": "/(.*)",
-        "dest": "wine_inventory/wsgi.py"
-    }]
+    ],
+    "routes": [
+        {
+            "src": "/static/(.*)",
+            "dest": "/wine_inventory/staticfiles/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "wine_inventory/wsgi.py"
+        }
+    ]
 }
