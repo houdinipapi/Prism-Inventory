@@ -111,7 +111,12 @@ DATABASES = {
 }
 
 
-# Password validation
+# DATABASES = {
+#     "default": dj_database_url.parse(
+#         "postgresql://prism_wine_inventory_user:hN3WHQDu1uBywasYJM40tt2iu6zVT6wF@dpg-cqhcrjo8fa8c73bql670-a.oregon-postgres.render.com/prism_wine_inventory"
+#     )
+# }
+# # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
